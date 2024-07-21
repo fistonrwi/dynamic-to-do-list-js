@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to add a task
     function addTask() {
-        // // Retrieve and trim the value from the task input field
-        // const taskText = taskInput.value.trim();
 
         // Check if taskText is not empty
         if (taskText === '') {
             alert('Please enter a task!');
-            return;
+        }
+        else{
+            let li = document.createElement("li")
         }
 
         // Create a new li element and set its textContent to taskText
