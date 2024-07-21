@@ -1,40 +1,40 @@
-// Wait for the DOM to fully load before running the script
 document.addEventListener('DOMContentLoaded', () => {
-    // Select DOM elements
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
 
     // Function to add a task
     function addTask() {
-        // Get the task text
+        // Retrieve and trim the value from the task input field
         const taskText = taskInput.value.trim();
 
-        // Check if the task text is not empty
+        // Check if taskText is not empty
         if (taskText === '') {
-            alert('Please enter a task!');
+            console.log('Please enter a task!'); // Replace with a user-friendly message if needed
             return;
         }
 
-        // Create a new list item (li) element
+        // Create a new li element and set its textContent to taskText
         const taskItem = document.createElement('li');
         taskItem.textContent = taskText;
 
-        // Create a remove button
+        // Create a new button element for removing the task
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Remove';
-        removeButton.className = 'remove-btn';
-        removeButton.addEventListener('click', () => {
-            taskList.removeChild(taskItem);
-        });
+        removeButton.classList.add('remove-btn'); // Add class using classList.add()
 
-        // Append the remove button to the list item
+        // Assign an onclick event to the remove button
+        removeButton.onclick = () => {
+            taskList.removeChild(taskItem);
+        };
+
+        // Append the remove button to the li element
         taskItem.appendChild(removeButton);
 
-        // Append the list item to the task list
+        // Append the li to the taskList
         taskList.appendChild(taskItem);
 
-        // Clear the input field
+        // Clear the task input field
         taskInput.value = '';
     }
 
