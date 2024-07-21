@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Check if taskText is not empty
         if (taskText === '') {
-            console.log('Please enter a task!'); // Replace with a user-friendly message if needed
+            // Use alert to notify the user if the task input is empty
+            alert('Please enter a task!');
             return;
         }
 
